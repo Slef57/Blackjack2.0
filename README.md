@@ -1,0 +1,1 @@
+I am Lefteris Melles and I am a 2nd-year undergraduate student in the Department of Information Technology and Electronic Systems Engineering at the International Hellenic University. In the context of the laboratory part of the "Languages ​​& Web Technologies" course, I was asked to make this specific website.
