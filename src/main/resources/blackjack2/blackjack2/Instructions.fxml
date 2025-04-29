@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack2.blackjack2.InstructionsController">
+    <children>
+        <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@HomeBackground.png" />
+            </image>
+        </ImageView>
+      <Rectangle arcHeight="200.0" arcWidth="200.0" fill="#0c5c0c" height="800.0" layoutX="260.0" layoutY="140.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="rectangle" width="1400.0" />
+      <TextFlow layoutX="360.0" layoutY="240.0" prefHeight="600.0" prefWidth="1200.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Objective                                                                             " wrappingWidth="875.49267578125">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Get as close to 21 as possible without exceeding it. Beat the dealer's hand to win.   ">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gameplay                                                                             " wrappingWidth="875.49267578125">
+               <font>
+                  <Font name="System Bold" size="46.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Get as close to 21 as possible without exceeding it. Beat the dealer's hand to win.   ">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+    </children>
+</AnchorPane>

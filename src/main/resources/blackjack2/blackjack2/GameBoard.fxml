@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack2.blackjack2.GameBoardController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@GameBoardBackground.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="1328.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@dealer.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="200.0" arcWidth="200.0" fill="#0c5c0c" height="453.0" layoutX="173.0" layoutY="720.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="rectangle" width="1577.0" />
+      <ImageView fitHeight="125.0" fitWidth="125.0" layoutX="154.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@person.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" rotate="-7.0">
+         <image>
+            <Image url="@CardBackside.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" rotate="7.4">
+         <image>
+            <Image url="@CardBackside.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CardBackside.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="120.0" arcWidth="120.0" fill="#0c5c0c" height="157.0" layoutX="1453.0" layoutY="360.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="rectangle" width="448.0" />
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="1483.0" layoutY="370.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@money.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="1543.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BUDGET:" wrappingWidth="211.21557617187494">
+         <font>
+            <Font size="51.0" />
+         </font>
+      </Text>
+      <Text fx:id="budgetValue" layoutX="1756.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="151.40771484375">
+         <font>
+            <Font size="51.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="1589.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casino-chips.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="1650.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BET:" wrappingWidth="105.6077880859375">
+         <font>
+            <Font size="51.0" />
+         </font>
+      </Text>
+      <Text fx:id="betValue" layoutX="1756.0" layoutY="485.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.6077880859375">
+         <font>
+            <Font size="51.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="120.0" arcWidth="120.0" fill="#0c5c0c" height="157.0" layoutX="1508.0" layoutY="544.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="rectangle" width="383.0" />
+      <Text layoutX="1573.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hand Value" wrappingWidth="266.407958984375">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <Text fx:id="handValue" layoutX="1680.0" layoutY="671.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="60.0">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="betPopUp" layoutX="480.0" layoutY="226.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;">
+         <children>
+            <Text fx:id="betPopUpText" layoutX="153.5" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your bet" wrappingWidth="652.918701171875">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Text>
+            <Button fx:id="BetPopUpSubmitButton" layoutX="355.0" layoutY="400.0" mnemonicParsing="false" onAction="#onBetPopUpSubmitButtonClick" text="Submit" textFill="WHITE" />
+            <Text fx:id="PopUpBetValue" layoutX="421.5" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" wrappingWidth="117.59999999999991">
+               <font>
+                  <Font size="69.0" />
+               </font>
+            </Text>
+            <Slider fx:id="BetSlider" blockIncrement="5.0" layoutX="114.0" layoutY="187.0" majorTickUnit="10.0" minorTickCount="5" prefHeight="53.0" prefWidth="733.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="100.0" />
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="AceOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/ace_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="AceOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/ace_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="AceOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/ace_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="AceOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/ace_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TwoOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/2_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TwoOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/2_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TwoOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/2_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TwoOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/2_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ThreeOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/3_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ThreeOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/3_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ThreeOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/3_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="ThreeOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/3_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FourOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/4_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FourOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/4_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FourOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/4_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FourOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/4_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FiveOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/5_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FiveOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/5_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FiveOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/5_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="FiveOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/5_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SixOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/6_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SixOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/6_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SixOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/6_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SixOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/6_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SevenOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/7_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SevenOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/7_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SevenOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/7_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="SevenOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/7_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EightOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/8_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EightOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/8_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EightOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/8_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="EightOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/8_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="NineOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/9_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="NineOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/9_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="NineOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/9_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="NineOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/9_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TenOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/10_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TenOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/10_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TenOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/10_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="TenOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/10_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="JackOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/jack_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="JackOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/jack_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="JackOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/jack_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="JackOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/jack_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="QueenOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/queen_of_spades.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="QueenOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/queen_of_hearts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="QueenOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/queen_of_clubs.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="QueenOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/queen_of_diamonds.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="KingOfSpades" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/king_of_spades.png" />
+         </image></ImageView>
+      <ImageView fx:id="KingOfHearts" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/king_of_hearts.png" />
+         </image></ImageView>
+      <ImageView fx:id="KingOfClubs" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/king_of_clubs.png" />
+         </image></ImageView>
+      <ImageView fx:id="KingOfDiamonds" fitHeight="316.0" fitWidth="220.0" layoutX="1644.0" layoutY="32.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" styleClass="card">
+         <image>
+            <Image url="@cards/king_of_diamonds.png" />
+         </image></ImageView>
+      <Button fx:id="DrawButton" disable="true" layoutX="1644.0" layoutY="32.0" mnemonicParsing="false" onAction="#onDrawButtonClick" opacity="0.0" prefHeight="316.0" prefWidth="220.0" />
+      <ImageView fx:id="SecondCardFlipped" fitHeight="351.0" fitWidth="235.0" layoutX="580.0" layoutY="65.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@CardBackside.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="acePopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="175.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You drew an Ace!!!" wrappingWidth="620.9185791015625">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="370.0" mnemonicParsing="false" onAction="#onAcePopUp1ButtonClick" prefHeight="120.0" prefWidth="246.4" text="1" textFill="WHITE" />
+            <Text layoutX="230.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Would you like the Ace" wrappingWidth="504.11865234375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="290.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to worth 1 or 11?" wrappingWidth="377.7186279296875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="600.0" layoutY="370.0" mnemonicParsing="false" onAction="#onAcePopUp11ButtonClick" prefHeight="120.0" prefWidth="246.4" text="11" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="StandButton" disable="true" layoutX="1460.0" layoutY="170.0" mnemonicParsing="false" onAction="#onStandButtonClick" prefHeight="157.0" prefWidth="157.0" styleClass="stop">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@StandIcon.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <AnchorPane fx:id="AceValueChangePopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="310.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Bust!!!" wrappingWidth="358.5185546875">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="250.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Value of your Ace" wrappingWidth="480.0">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="220.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="has been changed to 1!!!" wrappingWidth="537.718505859375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="360.0" layoutY="390.0" mnemonicParsing="false" onAction="#onAceValueChangePopUpOKButtonClick" prefHeight="120.0" prefWidth="246.4" text="OK" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="BustPopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="310.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You Bust!!!" wrappingWidth="358.5185546875">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text fx:id="BustPopUpHVText" layoutX="260.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Hand Value (99)" wrappingWidth="464.0">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="340.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is above 21 !!!" wrappingWidth="302.5185546875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="285.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost your bet!!!" wrappingWidth="414.5185546875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onBustPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onBustPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="BlackjackPopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="325.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blackjack" wrappingWidth="300.859375">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="270.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congratultions!!!" wrappingWidth="443.59992675781245">
+               <font>
+                  <Font size="60.0" />
+               </font>
+            </Text>
+            <Text layoutX="300.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Hand Value" wrappingWidth="366.79999999999995">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="330.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is exactly 21 !!!" wrappingWidth="326.4593505859375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="185.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You win your bet +1.5 times" wrappingWidth="611.2593994140625">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="440.0" mnemonicParsing="false" onAction="#onBlackjackPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="440.0" mnemonicParsing="false" onAction="#onBlackjackPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="WinPopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="315.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You won!!!" wrappingWidth="356.91845703125">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="250.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You win your bet X2!!!" wrappingWidth="480.0">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="WinPopUpHVText" layoutX="250.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Hand Value (99)" wrappingWidth="462.39990234375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="WinPopUpHouseHVText" layoutX="145.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is above house Hand Value (99)" wrappingWidth="688.118408203125">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onWinPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onWinPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="LosePopUp" layoutX="480.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="330.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost!!!" wrappingWidth="332.9185791015625">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="280.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost your bet!!!" wrappingWidth="419.199951171875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="LosePopUpHVText" layoutX="260.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Hand Value (99)" wrappingWidth="462.39990234375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="LosePopUpHouseHVText" layoutX="145.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is below house Hand Value (99)" wrappingWidth="688.118408203125">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onLosePopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onLosePopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="DrawPopUp" layoutX="480.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="370.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Draw!!!" wrappingWidth="240.0">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="270.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You keep your bet!!!" wrappingWidth="438.4000244140625">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="220.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Both you and house have" wrappingWidth="553.5999755859375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="DrawPopUpHVText" layoutX="320.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hand Value (99)" wrappingWidth="350.5184326171875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onDrawPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onDrawPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="HouseBustPopUp" layoutX="480.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="265.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House Bust!!!" wrappingWidth="443.318603515625">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="250.0" layoutY="350.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You win your bet X2!!!" wrappingWidth="480.0">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text fx:id="HouseBustPopUpHVText" layoutX="230.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House Hand Value (99)" wrappingWidth="512.0">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="330.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is above 21 !!!" wrappingWidth="302.5185546875">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onHouseBustPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onHouseBustPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="HouseBlackjackPopUp" layoutX="490.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="230.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House Blackjack" wrappingWidth="531.2593994140625">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="280.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost your bet!!!" wrappingWidth="417.99995117187495">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="285.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="House Hand Value" wrappingWidth="403.59992675781245">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Text layoutX="330.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="is exactly 21 !!!" wrappingWidth="326.4593505859375">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="100.0" layoutY="390.0" mnemonicParsing="false" onAction="#onHouseBlackjackPopUpPlayAgainButtonClick" prefHeight="120.0" prefWidth="326.0" text="Play again" textFill="WHITE" />
+            <Button layoutX="560.0" layoutY="390.0" mnemonicParsing="false" onAction="#onHouseBlackjackPopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="BrokePopUp" layoutX="480.0" layoutY="236.0" opacity="0.97" prefHeight="628.0" prefWidth="960.0" style="-fx-background-color: #0c5c0c; -fx-background-radius: 25; -fx-border-color: ffffff; -fx-border-radius: 25; -fx-border-width: 3;" visible="false">
+         <children>
+            <Text layoutX="100.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You are out of money!!!" wrappingWidth="788.5">
+               <font>
+                  <Font size="75.0" />
+               </font>
+            </Text>
+            <Text layoutX="235.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You lost all your money" wrappingWidth="518.4000244140625">
+               <font>
+                  <Font size="49.0" />
+               </font>
+            </Text>
+            <Button layoutX="320.0" layoutY="400.0" mnemonicParsing="false" onAction="#onBrokePopUpExitButtonClick" prefHeight="120.0" prefWidth="326.0" text="Exit" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

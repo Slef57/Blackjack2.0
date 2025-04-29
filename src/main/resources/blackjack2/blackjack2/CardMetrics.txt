@@ -1,0 +1,41 @@
+Card Size
+190 
+275.88
+
+Deck Position
+1644
+32
+
+Discard Position
+120
+32
+
+
+1st slot
+300
+745
+
+2nd slot
+1st + 230
+745
+
+3rd slot
+...
+...
+
+...
+
+5th slot
+...
+..
+
+HOUSE
+
+1st slot
+350
+75
+
+2nd slot
+350 + 230
+75
+...

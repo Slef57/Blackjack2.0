@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Cinzel Decorative Regular';
+    src: url('../blackjack2/CinzelDecorative-Regular.ttf');
+}
+
+.label {
+    -fx-font-family: 'Cinzel Decorative Regular';
+    -fx-font-size: 150.0;
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.25) ,4, 0.0 , 0 , 4);
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../blackjack2/Roboto-Bold.ttf');
+}
+
+.button {
+    -fx-font-family: 'Roboto Bold';
+    -fx-font-size: 54.0;
+    -fx-background-radius: 19;
+    -fx-background-color: #7c0000;
+    -fx-border-radius: 19;
+    -fx-border-width: 2;
+    -fx-border-color: #ffffff;
+}
+
+.button:hover {
+    -fx-background-color: #9f1515;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #730e0e;
+}
+
+.slider {
+    -fx-font-family: 'Roboto Bold';
+    -fx-font-size: 35.0;
+}
+
+.slider .track {
+    -fx-background-color: linear-gradient(to right, #cf0d0d, #971818);
+    -fx-background-radius: 5; /* Smooth corners */
+    -fx-padding: 3;
+}
+
+.slider .thumb {
+    -fx-background-color: gold;
+    -fx-border-width: 2;
+    -fx-background-radius: 20; /* Makes the thumb circular */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 0);
+    -fx-scale-x: 0.8;
+    -fx-scale-y: 0.8;
+}
+
+.slider .thumb:hover {
+    -fx-scale-x: 1; /* Slightly increase size on hover */
+    -fx-scale-y: 1;
+}
+
+.card {
+    -fx-effect: dropshadow( three-pass-box , rgba(0, 0, 0, 0.25) ,4, 0.0 , 0 , 4);
+    -fx-fit-width: 190;
+    -fx-fit-geight: 275.88;
+}
+
+.stop {
+    -fx-border-radius: 100;
+    -fx-background-radius: 100;
+}
